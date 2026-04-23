@@ -1,0 +1,54 @@
+/* Accessibility & Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, .recipe-card:focus-visible {
+    outline: 3px solid #f57c00;
+    outline-offset: 2px;
+}
+.logo { text-decoration: none; }
+button { font-family: inherit; }
+
+/* Interactive Recipe Cards */
+.recipe-card { position: relative; }
+.save-btn { 
+    position: absolute; top: 25px; right: 25px; 
+    background: white; border: none; border-radius: 50%;
+    width: 35px; height: 35px; font-size: 18px; 
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: all 0.2s ease; z-index: 2;
+}
+.save-btn:hover { transform: scale(1.1); }
+.save-btn.saved { color: #e53935; } /* Red heart */
+
+/* Modal Styles */
+.modal { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000;
+}
+.modal.active { display: flex; }
+.modal-content { 
+    background: white; padding: 40px; border-radius: 15px; width: 90%; max-width: 400px;
+    position: relative; animation: slideUp 0.3s ease;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-btn { 
+    position: absolute; top: 15px; right: 15px; background: none; border: none;
+    font-size: 20px; cursor: pointer; color: #777; transition: color 0.2s;
+}
+.close-btn:hover { color: #e53935; }
+.modal-content h2 { margin-bottom: 10px; }
+.modal-content p { color: #666; margin-bottom: 20px; font-size: 14px; }
+.input-group { margin-bottom: 15px; text-align: left; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 14px; }
+.input-group input { 
+    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; 
+}
+.full-width { width: 100%; margin-top: 10px; display: flex; justify-content: center; gap: 10px; }
+.spinner { animation: spin 1s linear infinite; }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Toast Notification */
+.toast {
+    position: fixed; bottom: 30px; right: 30px; background: #333; color: white;
+    padding: 15px 25px; border-radius: 8px; transform: translateY(100px); opacity: 0;
+    transition: all 0.3s ease; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.toast.show { transform: translateY(0); opacity: 1; }

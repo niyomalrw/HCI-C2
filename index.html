@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasties - Delicious recipes made simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo" aria-label="Tasties Home">🍳 Tasties</a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#recipes">Recipes</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <div class="search-profile">
+            <input type="text" placeholder="Search recipes..." aria-label="Search recipes">
+            <button class="profile-btn" id="profileBtn" aria-label="User Account" title="Sign In / Create Account">👤</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Delicious recipes<br>made simple</h1>
+            <p>Discover easy, tasty and healthy recipes for every moment.</p>
+            <button class="cta-btn" onclick="document.getElementById('recipes').scrollIntoView({behavior: 'smooth'})">Explore Recipes →</button>
+        </div>
+    </header>
+
+    <section id="categories" class="categories">
+        <button class="category" tabindex="0">🥞 Breakfast</button>
+        <button class="category" tabindex="0">🥗 Lunch</button>
+        <button class="category" tabindex="0">🍝 Dinner</button>
+        <button class="category" tabindex="0">🧁 Desserts</button>
+    </section>
+
+    <section id="recipes" class="popular-recipes">
+        <h2>Popular Recipes</h2>
+        <div class="recipe-grid">
+            <div class="recipe-card" tabindex="0">
+                <button class="save-btn" aria-label="Save Fluffy Banana Pancakes" title="Save Recipe">🤍</button>
+                <div class="img-placeholder" style="background-color: #fce4ec;">🥞</div>
+                <h3>Fluffy Banana Pancakes</h3>
+                <div class="meta">⭐ 4.8 (120) • 🕒 20 min</div>
+                <span class="tag">Breakfast</span>
+            </div>
+            <div class="recipe-card" tabindex="0">
+                <button class="save-btn" aria-label="Save Grilled Chicken Salad" title="Save Recipe">🤍</button>
+                <div class="img-placeholder" style="background-color: #e8f5e9;">🥗</div>
+                <h3>Grilled Chicken Salad</h3>
+                <div class="meta">⭐ 4.7 (98) • 🕒 30 min</div>
+                <span class="tag tag-green">Lunch</span>
+            </div>
+            <div class="recipe-card" tabindex="0">
+                <button class="save-btn" aria-label="Save Creamy Garlic Pasta" title="Save Recipe">🤍</button>
+                <div class="img-placeholder" style="background-color: #fff3e0;">🍝</div>
+                <h3>Creamy Garlic Pasta</h3>
+                <div class="meta">⭐ 4.9 (150) • 🕒 25 min</div>
+                <span class="tag tag-yellow">Dinner</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="accountModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal" aria-label="Close modal">✖</button>
+            <h2 id="modalTitle">Create an Account</h2>
+            <p>Save your favorite recipes and access them anywhere.</p>
+            <form id="signupForm" class="account-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@example.com">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="cta-btn full-width" id="submitBtn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="spinner" style="display: none;">↻</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <footer>
+        <div class="footer-content">
+            <h2>🍳 Tasties</h2>
+            <p>Making cooking easy, tasty and fun for everyone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
